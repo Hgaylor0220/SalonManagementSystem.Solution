@@ -23,3 +23,4 @@ namespace SalonManagementSystem.Controllers
             return View(model);
         }
     }
+}
