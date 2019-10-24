@@ -1,0 +1,18 @@
+@using SalonManagementSystem.Models;
+@model List<SalonManagementSystem.Models.Stylist>;
+
+<header>
+<h1>Salon Stylist</h1>    
+</header>
+
+@if (@Model.count == 0)
+{
+    <h3> There are no Stylist in your Salon, please add a Stylist </h3>
+}
+
+@foreach (Stylist stylist in Model)
+{
+    <li> @Html.ActionLink($"{stylist.Name}", "Details", new {id = stylist.Client.StylistId})</li>
+}
+<p>@Html.ActionLink("Add a Stylist", "Create")</p>
+<p>@Html.ActionLink("Return Home", "Index", "Home")</p>
