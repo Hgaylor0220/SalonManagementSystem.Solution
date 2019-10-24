@@ -10,5 +10,10 @@ namespace SalonManagementSystem.Controllers
 {
     public class StylistsController : Controller
     {
-        
+        private readonly SalonManagementSystemContext _db;
+
+        public StylistsController(SalonManagementSystemContext db)
+        {
+            _db =db;
+        }
     }
