@@ -28,5 +28,30 @@ namespace SalonManagementSystem.Controllers
             List<Stylist> model =_db.Stylists.ToList();
             return View(model);
         }
+
+        [HttpPost]
+        public ActionResult Create(Stylist stylist)
+        {
+            _db.Stylists.Add(stylist);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        
+        }
+
+
+        public ActionResult Details(int id)
+        {
+            _Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => Stylist.StylistId == id);
+            return View(thisStylist);
+
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var thisStylist = _db.Stylists.FirstOrDefault(stylist => Stylist.StylistId == id);
+            return View(thisStylist);
+
+        }
+
     }
 }

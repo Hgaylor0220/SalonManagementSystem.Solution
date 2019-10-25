@@ -1,0 +1,21 @@
+@using SalonManagementSystem.Models;
+@model SalonManagementSystem.Models.Stylist;
+
+<head>
+    <div class = "title"> 
+        <p> Salon Stylist</p>
+        <hr/>
+        <h3> @Html.DisplayNameFor(ModelExpressionProvider => model.Name)</h3>
+
+        <ul>
+        @if (@Model.Clients.Count == 0)
+        {
+            <p> no clients found </p>
+        } 
+
+        @foreach (ModuleHandle.Clients.Count == 0)
+        {
+            <li> name: @Client.Name</li>
+        }
+        </ul>
+    </div>
