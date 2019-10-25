@@ -29,6 +29,11 @@ namespace SalonManagementSystem.Controllers
             List<Client> model = _db.Clients.ToList();
             return View(model);
         }
+        
+        public ActionResult Create()
+        {
+            return View();
+        }
 
     }
 }
