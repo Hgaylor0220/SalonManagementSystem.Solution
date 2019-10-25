@@ -5,17 +5,21 @@
     <div class = "title"> 
         <p> Salon Stylist</p>
         <hr/>
-        <h3> @Html.DisplayNameFor(ModelExpressionProvider => model.Name)</h3>
+       <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-        <ul>
-        @if (@Model.Clients.Count == 0)
-        {
-            <p> no clients found </p>
-        } 
+</head>
+<ul>
+@if (@Model.Client.Count == 0)
+{
+  <p>no clients found</p>
+}
 
-        @foreach (ModuleHandle.Clients.Count == 0)
-        {
-            <li> name: @Client.Name</li>
-        }
-        </ul>
+@foreach (Client client in @Model.Client)
+{
+  <li>Name: @client.Name</li>
+}
+</ul>
     </div>
+<p>@Html.ActionLink("Back to Stylist", "Index")</p>
+<p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
+<p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
