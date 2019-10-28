@@ -1,4 +1,3 @@
-@using SalonManagementSystem.Models;
 @model SalonManagementSystem.Models.Stylist;
 
 <head>
@@ -14,7 +13,7 @@
   <p>no clients found</p>
 }
 
-@foreach (Client client in @Model.Client)
+@foreach (var client in @Model.Client)
 {
   <li>Name: @client.Name</li>
 }
