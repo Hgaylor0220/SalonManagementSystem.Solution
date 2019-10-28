@@ -1,12 +1,9 @@
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SalonManagementSystem.Models;
 using SalonManagementSystem.Data;
-
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace SalonManagementSystem.Controllers
 {
@@ -18,7 +15,6 @@ namespace SalonManagementSystem.Controllers
         {
             _db = db;
         }
-
         public ActionResult Index()
         {
             List<Client> model = _db.Clients.ToList();
@@ -37,7 +33,6 @@ namespace SalonManagementSystem.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         public ActionResult Details(int id)
         {
             Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
@@ -60,20 +55,6 @@ namespace SalonManagementSystem.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Delete(int id)
-        {
-            var thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-            return View(thisClient);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            var thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-            _db.Clients.Remove(thisClient);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
     }
+
 }
