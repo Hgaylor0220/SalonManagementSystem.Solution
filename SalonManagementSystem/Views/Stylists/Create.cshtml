@@ -1,15 +1,10 @@
 @model SalonManagementSystem.Models.Stylist
-<head>
-<h2> Edit Stylist</h2>
-</head>
-<h4> Edit this Stylist: @Html.displayFor(model => model.Name) </h4>
 
+<h4>Add a new stylist</h4>
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
-
-    <input type="submit" value="Save" />
-
+    @Html.TextBoxFor(model => model.Name)
+    <input type="submit" value="Add new category" />
 }
- <p> Html.ActionLink("Back to Stylist Home page", "Index")</p>
+<p>@Html.ActionLink("Show all Stylist in the Salon", "Index")</p>
