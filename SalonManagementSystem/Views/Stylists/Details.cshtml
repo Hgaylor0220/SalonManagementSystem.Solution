@@ -1,7 +1,8 @@
 @model SalonManagementSystem.Models.Stylist;
 
-
-<h2>Stylist Details</h2>
+<div class="jumbotron">
+<h2>Your Stylist Detials</h2>
+</div>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
@@ -16,7 +17,7 @@
   <li>Name: @client.Name</li>
 }
 </ul>
-
+<p>@Html.ActionLink("Add a Client", "Create", "CLients")</p>
 <p>@Html.ActionLink("Back to Stylist", "Index")</p>
 <p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
 <p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
