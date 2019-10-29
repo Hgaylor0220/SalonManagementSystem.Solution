@@ -16,6 +16,12 @@ User can add recipes and cooking instructions or view their current recipes with
 - navigate to project directory 'SalonManagementSystem.Solution' and run $dotnet restore.
 - Run in the terminal $dotnet run watch
 
+## Setting up new DB
+- Navigate to the SalonManagementSystem folder in the project
+- In the terminal run the command $ dotnet ef migrations add NewDB. This will make file message of your new database.
+- run the command $dotnet ef database update. This will add your new updated Database
+- run the command $dotnet run watch To start the application 
+
 ## Specs
 
 | Scenario | When| given that | Result |
