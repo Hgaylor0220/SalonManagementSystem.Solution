@@ -4,6 +4,7 @@ using SalonManagementSystem.Data;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SalonManagementSystem.Controllers
 {
@@ -23,6 +24,7 @@ namespace SalonManagementSystem.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
             return View();
         }
 
